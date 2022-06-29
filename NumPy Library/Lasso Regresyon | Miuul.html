@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:32,height:32/https://www.filepicker.io/api/file/aDJQIqGQmhRSmEXyCI0A' rel='icon' type='image/png'>
+
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:72,height:72/https://www.filepicker.io/api/file/aDJQIqGQmhRSmEXyCI0A' rel='apple-touch-icon' type='image/png'>
+
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:144,height:144/https://www.filepicker.io/api/file/aDJQIqGQmhRSmEXyCI0A' rel='apple-touch-icon' type='image/png'>
+
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:320,height:345/https://www.filepicker.io/api/file/g9yU7b0SQvC4c7Ve7SXn' rel='apple-touch-startup-image' type='image/png'>
+
+<link href='https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:640,height:690/https://www.filepicker.io/api/file/g9yU7b0SQvC4c7Ve7SXn' rel='apple-touch-startup-image' type='image/png'>
+
+<meta name='apple-mobile-web-app-capable' content='yes' />
+<meta charset="UTF-8">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="3HH6LUYWpB5oY2M17Icx1EOE+zzIGzBQYvUNmk1NKJSyPSAIyAoMFioHhogiBXDHoeQ6EI12acFeo4jkUCT9WA==" />
+<link rel="stylesheet" media="screen" href="https://fedora.teachablecdn.com/assets/bootstrap-a14e0219bff457941c01e229139fcb9f4709e289d96efa3a24bad96561d56e6c.css" data-turbolinks-track="true" /><link href="https://themes2.teachablecdn.com/themecss/production/base.css?_=f1a26d9f6e1a&amp;brand_course_heading=%23ffffff&amp;brand_heading=%23000000&amp;brand_homepage_heading=%23ffffff&amp;brand_navbar_fixed_text=%23ffffff&amp;brand_navbar_text=%23ffffff&amp;brand_primary=%230B1C2A&amp;brand_secondary=%234F6786&amp;brand_text=%23000000&amp;font=Raleway&amp;logged_out_homepage_background_image_overlay=0.0&amp;logged_out_homepage_background_image_url=https%3A%2F%2Fwww.filepicker.io%2Fapi%2Ffile%2Fg9yU7b0SQvC4c7Ve7SXn&amp;show_login=true" rel="stylesheet" data-turbolinks-track="true"></link>
+<title>Ridge Regresyon: Model | Miuul</title>
+<meta name="description" content="&quot;Makine öğrenimi, bilgisayar programlarının deneyim yoluyla otomatik olarak gelişmesine izin veren bilgisayar algoritmaları çalışmasıdır.&quot; - Tom M. Mitchel">
+<link rel="canonical" href="https://courses.miuul.com/courses/1452426/lectures/33312816">
+<meta property="og:description" content="&quot;Makine öğrenimi, bilgisayar programlarının deneyim yoluyla otomatik olarak gelişmesine izin veren bilgisayar algoritmaları çalışmasıdır.&quot; - Tom M. Mitchel">
+<meta property="og:image" content="https://file-uploads.teachablecdn.com/c936bf0f7d6f4328acefc1ad35e10ce1/7430879f257d4110875d61a7acbf01d8">
+<meta property="og:title" content="Ridge Regresyon: Model">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://courses.miuul.com/courses/1452426/lectures/33312816">
+<meta name="brand_video_player_color" content="#4F6786">
+<meta name="site_title" content="Miuul">
+<style></style>
+<script src='//fast.wistia.com/assets/external/E-v1.js'></script>
+<script src='https://www.recaptcha.net/recaptcha/api.js' async defer></script>
+
+
+      <meta name="asset_host" content="https://fedora.teachablecdn.com">
+     <script src="https://fedora.teachablecdn.com/packs/student-globals--c4728e7e6500aba560c7.js"></script><script src="https://fedora.teachablecdn.com/packs/student-legacy--424503d7e832b2f12769.js"></script><script src="https://fedora.teachablecdn.com/packs/student--950726534add6c6a4040.js"></script>
+
+<!-- Google Tag Manager -->
+<script>var dataLayer = [];</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N2C5GXD');</script>
+<!-- End Google Tag Manager -->
+
+
+<script>
+  if(typeof ga != 'function') {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  }
+  ga('create', 'UA-44397410-1', 'auto', {'name': 'fedoraTracker', 'allowLinker': true});
+  ga('fedoraTracker.set', 'anonymizeIp', false);
+  ga('fedoraTracker.require', 'linker');
+  ga('fedoraTracker.linker:autoLink', ['courses.miuul.com',  'sso.teachable.com'], false, true );
+  ga('fedoraTracker.require', 'ecommerce');
+  ga('fedoraTracker.require', 'ec');
+  ga('fedoraTracker.send', 'pageview');
+  ga('create', 'UA-44397410-4', 'auto', {'name': 'teachableTracker', 'allowLinker': true});
+  ga('teachableTracker.set', 'anonymizeIp', false);
+  ga('teachableTracker.require', 'linker');
+  ga('teachableTracker.linker:autoLink', ['courses.miuul.com', 'sso.teachable.com'], false, true );
+  ga('teachableTracker.require', 'ecommerce');
+  ga('teachableTracker.require', 'ec');
+  ga('teachableTracker.send', 'pageview');
+</script>
+
+<meta id='iris-url' data-iris-url=https://eventable.teachable.cloud />
+<script type="text/javascript">
+  window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])},heap.load("318805607");
+</script>
+
+
+<link href="/blog/rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta id="custom-text" data-referral-block-button="Learn more">
+  </head>
+
+  <body data-no-turbolink="true" class="revamped_lecture_player">
+          <meta http-content='IE=Edge' http-equiv='X-UA-Compatible'>
+      <meta content='width=device-width,initial-scale=1.0,user-scalable=no' name='viewport'>
+<meta id="fedora-keys" data-commit-sha="f1a26d9f6e1a5e31f334364226462d54a470ee8a" data-env="production" data-sentry-public-dsn="https://8149a85a83fa4ec69640c43ddd69017d@sentry.io/120346" data-stripe="pk_live_hkgvgSBxG4TAl3zGlXiB1KUX" data-track-all-ahoy="false" data-track-changes-ahoy="false" data-track-clicks-ahoy="false" data-track-sumbits-ahoy="false" data-filepicker="ADNupMnWyR7kCWRvm76Laz" data-iris-url="https://eventable.teachable.cloud" /><meta id="fedora-data" data-id="70394363" data-name="Hakan Erdem" data-email="hakanerdem29@yahoo.com.tr" data-school-id="835685" data-joined-at="&quot;2022-03-04T13:05:44Z&quot;" data-wistia-identifier="835685:student:70394363" data-gravatar-url="https://s.gravatar.com/avatar/3dc783c459f57ff61ba3faf656facbd2?d=mm" data-custom-role-course-permissions="false" data-report-card="{&quot;1452426&quot;:{&quot;id&quot;:683432530,&quot;course_id&quot;:1452426,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:24,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-04-20T10:29:22Z&quot;,&quot;completed_at&quot;:null,&quot;certificate_page_id&quot;:null,&quot;certificate_serial_number&quot;:null,&quot;certificate_issued_at&quot;:null,&quot;completed_lecture_count&quot;:24,&quot;completed_lecture_ids&quot;:[33312678,33312679,33312680,33312681,33312682,33312683,33312684,33312685,33312686,33312687,33312806,33312807,33312808,33312809,33312810,33312811,33312816,33312817,33312819,33312820,33312821,33312823,33386836,33459858],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452410&quot;:{&quot;id&quot;:683432529,&quot;course_id&quot;:1452410,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-04-15T14:32:40Z&quot;,&quot;completed_at&quot;:&quot;2022-04-15T14:32:40Z&quot;,&quot;certificate_page_id&quot;:8536176,&quot;certificate_serial_number&quot;:&quot;cert_5mr4q6wj&quot;,&quot;certificate_issued_at&quot;:&quot;2022-04-15T14:32:40Z&quot;,&quot;completed_lecture_count&quot;:23,&quot;completed_lecture_ids&quot;:[33312594,33312595,33312596,33312597,33312598,33312599,33312600,33312601,33312602,33312603,33312604,33312605,33312606,33312607,33312608,33312609,33312610,33312611,33312612,33312613,33361403,33386793,33459847],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452401&quot;:{&quot;id&quot;:683432528,&quot;course_id&quot;:1452401,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-04-14T09:19:52Z&quot;,&quot;completed_at&quot;:&quot;2022-04-14T09:19:52Z&quot;,&quot;certificate_page_id&quot;:8536187,&quot;certificate_serial_number&quot;:&quot;cert_qdxdw1ts&quot;,&quot;certificate_issued_at&quot;:&quot;2022-04-14T09:19:52Z&quot;,&quot;completed_lecture_count&quot;:55,&quot;completed_lecture_ids&quot;:[33312141,33312142,33312143,33312144,33312145,33312146,33312147,33312148,33312149,33312150,33312151,33312152,33312153,33312154,33312155,33312156,33312157,33312436,33312437,33312438,33312439,33312440,33312441,33312442,33312443,33312444,33312445,33312446,33312447,33312448,33312449,33312450,33312451,33312452,33312453,33312454,33312455,33312456,33312457,33312458,33312459,33312460,33312461,33312462,33312463,33312464,33312465,33312466,33312467,33312468,33312469,33312471,33360345,33386719,33459800],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452394&quot;:{&quot;id&quot;:683432527,&quot;course_id&quot;:1452394,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-04-11T10:53:38Z&quot;,&quot;completed_at&quot;:&quot;2022-04-11T10:53:38Z&quot;,&quot;certificate_page_id&quot;:8536191,&quot;certificate_serial_number&quot;:&quot;cert_rt4162xl&quot;,&quot;certificate_issued_at&quot;:&quot;2022-04-11T10:53:38Z&quot;,&quot;completed_lecture_count&quot;:30,&quot;completed_lecture_ids&quot;:[33312060,33312061,33312062,33312063,33312064,33312065,33312066,33312067,33312068,33312069,33312070,33312071,33312072,33312073,33312074,33312075,33312076,33312077,33312078,33312079,33312080,33312081,33312082,33312083,33312084,33312085,33312103,33359702,33386616,33459821],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452380&quot;:{&quot;id&quot;:683432526,&quot;course_id&quot;:1452380,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-04-04T13:34:39Z&quot;,&quot;completed_at&quot;:&quot;2022-04-04T13:34:39Z&quot;,&quot;certificate_page_id&quot;:8536198,&quot;certificate_serial_number&quot;:&quot;cert_zh9p34pl&quot;,&quot;certificate_issued_at&quot;:&quot;2022-04-04T13:34:39Z&quot;,&quot;completed_lecture_count&quot;:39,&quot;completed_lecture_ids&quot;:[33311665,33311666,33311667,33311668,33311669,33311670,33311671,33311672,33311673,33311674,33311675,33311677,33311678,33311679,33311680,33311681,33311682,33311683,33311804,33311960,33311961,33311962,33311963,33311964,33311965,33311966,33311967,33311968,33311969,33311970,33311971,33311972,33311973,33311974,33311975,33311976,33311977,33386402,33459717],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452363&quot;:{&quot;id&quot;:683432525,&quot;course_id&quot;:1452363,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-30T14:35:29Z&quot;,&quot;completed_at&quot;:&quot;2022-03-30T14:35:29Z&quot;,&quot;certificate_page_id&quot;:8536205,&quot;certificate_serial_number&quot;:&quot;cert_37jb55wt&quot;,&quot;certificate_issued_at&quot;:&quot;2022-03-30T14:35:29Z&quot;,&quot;completed_lecture_count&quot;:59,&quot;completed_lecture_ids&quot;:[33311382,33311383,33311384,33311385,33311386,33311387,33311388,33311389,33311390,33311391,33311392,33311393,33311394,33311395,33311396,33311397,33311398,33311399,33311400,33311487,33311488,33311489,33311490,33311491,33311492,33311493,33311494,33311495,33311496,33311497,33311498,33311499,33311500,33311501,33311502,33311503,33311575,33311576,33311577,33311578,33311579,33311580,33311581,33311582,33311583,33311584,33311585,33311586,33311587,33311588,33311589,33311590,33311591,33311592,33311593,33311594,33354154,33386014,33459763],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452350&quot;:{&quot;id&quot;:683432524,&quot;course_id&quot;:1452350,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-26T05:21:12Z&quot;,&quot;completed_at&quot;:&quot;2022-03-26T05:21:12Z&quot;,&quot;certificate_page_id&quot;:8536208,&quot;certificate_serial_number&quot;:&quot;cert_1n84px4y&quot;,&quot;certificate_issued_at&quot;:&quot;2022-03-26T05:21:12Z&quot;,&quot;completed_lecture_count&quot;:24,&quot;completed_lecture_ids&quot;:[33311019,33311020,33311021,33311022,33311023,33311024,33311025,33311026,33311027,33311028,33311029,33311030,33311031,33311032,33311033,33311034,33311035,33311036,33311037,33311038,33311039,33311040,33357361,33385850],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452178&quot;:{&quot;id&quot;:683432523,&quot;course_id&quot;:1452178,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-24T13:12:04Z&quot;,&quot;completed_at&quot;:&quot;2022-03-24T13:12:04Z&quot;,&quot;certificate_page_id&quot;:8536207,&quot;certificate_serial_number&quot;:&quot;cert_1xclp2dv&quot;,&quot;certificate_issued_at&quot;:&quot;2022-03-24T13:12:04Z&quot;,&quot;completed_lecture_count&quot;:17,&quot;completed_lecture_ids&quot;:[33307447,33307456,33307936,33307938,33307940,33307943,33307944,33307969,33307972,33307974,33307983,33307984,33307985,33307986,33308001,33356306,33385605],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1455403&quot;:{&quot;id&quot;:683432522,&quot;course_id&quot;:1455403,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:100,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-18T08:54:15Z&quot;,&quot;completed_at&quot;:&quot;2022-03-18T08:54:15Z&quot;,&quot;certificate_page_id&quot;:8481105,&quot;certificate_serial_number&quot;:&quot;cert_h4kyth2v&quot;,&quot;certificate_issued_at&quot;:&quot;2022-03-18T08:54:15Z&quot;,&quot;completed_lecture_count&quot;:12,&quot;completed_lecture_ids&quot;:[38707542,38761782,38761783,38761784,38761785,38761786,38761787,38761788,38761808,38761809,38761810,38761814],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452490&quot;:{&quot;id&quot;:683432533,&quot;course_id&quot;:1452490,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:0,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;completed_at&quot;:null,&quot;certificate_page_id&quot;:null,&quot;certificate_serial_number&quot;:null,&quot;certificate_issued_at&quot;:null,&quot;completed_lecture_count&quot;:0,&quot;completed_lecture_ids&quot;:[],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452472&quot;:{&quot;id&quot;:683432532,&quot;course_id&quot;:1452472,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:0,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;completed_at&quot;:null,&quot;certificate_page_id&quot;:null,&quot;certificate_serial_number&quot;:null,&quot;certificate_issued_at&quot;:null,&quot;completed_lecture_count&quot;:0,&quot;completed_lecture_ids&quot;:[],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;1452465&quot;:{&quot;id&quot;:683432531,&quot;course_id&quot;:1452465,&quot;is_active&quot;:true,&quot;has_full_access&quot;:false,&quot;percent_complete&quot;:0,&quot;enrolled_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;updated_at&quot;:&quot;2022-03-04T13:05:45Z&quot;,&quot;completed_at&quot;:null,&quot;certificate_page_id&quot;:null,&quot;certificate_serial_number&quot;:null,&quot;certificate_issued_at&quot;:null,&quot;completed_lecture_count&quot;:0,&quot;completed_lecture_ids&quot;:[],&quot;access_limited_at&quot;:null,&quot;days_enrolled&quot;:47},&quot;meta&quot;:{&quot;cached_at&quot;:&quot;2022-04-20T10:29:22Z&quot;}}" data-course-ids="[1452426,1452410,1452401,1452394,1452380,1452363,1452350,1452178,1455403,1452490,1452472,1452465]" data-role="student" data-completed-lecture-ids="[33312678,33312679,33312680,33312681,33312682,33312683,33312684,33312685,33312686,33312687,33312806,33312807,33312808,33312809,33312810,33312811,33312816,33312817,33312819,33312820,33312821,33312823,33386836,33459858,33312594,33312595,33312596,33312597,33312598,33312599,33312600,33312601,33312602,33312603,33312604,33312605,33312606,33312607,33312608,33312609,33312610,33312611,33312612,33312613,33361403,33386793,33459847,33312141,33312142,33312143,33312144,33312145,33312146,33312147,33312148,33312149,33312150,33312151,33312152,33312153,33312154,33312155,33312156,33312157,33312436,33312437,33312438,33312439,33312440,33312441,33312442,33312443,33312444,33312445,33312446,33312447,33312448,33312449,33312450,33312451,33312452,33312453,33312454,33312455,33312456,33312457,33312458,33312459,33312460,33312461,33312462,33312463,33312464,33312465,33312466,33312467,33312468,33312469,33312471,33360345,33386719,33459800,33312060,33312061,33312062,33312063,33312064,33312065,33312066,33312067,33312068,33312069,33312070,33312071,33312072,33312073,33312074,33312075,33312076,33312077,33312078,33312079,33312080,33312081,33312082,33312083,33312084,33312085,33312103,33359702,33386616,33459821,33311665,33311666,33311667,33311668,33311669,33311670,33311671,33311672,33311673,33311674,33311675,33311677,33311678,33311679,33311680,33311681,33311682,33311683,33311804,33311960,33311961,33311962,33311963,33311964,33311965,33311966,33311967,33311968,33311969,33311970,33311971,33311972,33311973,33311974,33311975,33311976,33311977,33386402,33459717,33311382,33311383,33311384,33311385,33311386,33311387,33311388,33311389,33311390,33311391,33311392,33311393,33311394,33311395,33311396,33311397,33311398,33311399,33311400,33311487,33311488,33311489,33311490,33311491,33311492,33311493,33311494,33311495,33311496,33311497,33311498,33311499,33311500,33311501,33311502,33311503,33311575,33311576,33311577,33311578,33311579,33311580,33311581,33311582,33311583,33311584,33311585,33311586,33311587,33311588,33311589,33311590,33311591,33311592,33311593,33311594,33354154,33386014,33459763,33311019,33311020,33311021,33311022,33311023,33311024,33311025,33311026,33311027,33311028,33311029,33311030,33311031,33311032,33311033,33311034,33311035,33311036,33311037,33311038,33311039,33311040,33357361,33385850,33307447,33307456,33307936,33307938,33307940,33307943,33307944,33307969,33307972,33307974,33307983,33307984,33307985,33307986,33308001,33356306,33385605,38707542,38761782,38761783,38761784,38761785,38761786,38761787,38761788,38761808,38761809,38761810,38761814,null]" data-school-id="835685" data-school-launched="true" data-preview="logged_in" data-turn-off-fedora-branding="true" data-plan-supports-whitelabeling="true" data-powered-by-text="Powered by" data-asset-path="//https://fedora.teachablecdn.com/assets/footer/teachable-logomark-white-31d2296978598bacace50e6d48a2e1223c20a9b074af424acdd465676f81560f.svg" data-school-preferences="{&quot;ssl_forced&quot;:&quot;true&quot;,&quot;anonymize_ips&quot;:&quot;false&quot;,&quot;paypal_enabled&quot;:&quot;false&quot;,&quot;autoplay_lectures&quot;:&quot;true&quot;,&quot;comments_threaded&quot;:&quot;true&quot;,&quot;course_blocks_beta&quot;:&quot;true&quot;,&quot;eu_vat_tax_enabled&quot;:&quot;false&quot;,&quot;legacy_back_office&quot;:&quot;false&quot;,&quot;themeable_disabled&quot;:&quot;false&quot;,&quot;back_office_enabled&quot;:&quot;false&quot;,&quot;comments_moderation&quot;:&quot;true&quot;,&quot;eu_vat_tax_eligible&quot;:&quot;true&quot;,&quot;charge_exclusive_tax&quot;:&quot;true&quot;,&quot;send_receipts_emails&quot;:&quot;true&quot;,&quot;autocomplete_lectures&quot;:&quot;true&quot;,&quot;class_periods_enabled&quot;:&quot;false&quot;,&quot;authors_can_manage_pbc&quot;:&quot;true&quot;,&quot;css_properties_enabled&quot;:&quot;false&quot;,&quot;preenrollments_enabled&quot;:&quot;false&quot;,&quot;new_text_editor_enabled&quot;:&quot;true&quot;,&quot;require_terms_agreement&quot;:&quot;true&quot;,&quot;send_new_comment_emails&quot;:&quot;true&quot;,&quot;send_drip_content_emails&quot;:&quot;true&quot;,&quot;ssl_forced_from_creation&quot;:&quot;true&quot;,&quot;turn_off_fedora_branding&quot;:&quot;true&quot;,&quot;allow_comment_attachments&quot;:&quot;true&quot;,&quot;authors_can_email_students&quot;:&quot;true&quot;,&quot;authors_can_manage_coupons&quot;:&quot;true&quot;,&quot;teachable_accounts_enabled&quot;:&quot;false&quot;,&quot;teachable_payments_enabled&quot;:&quot;true&quot;,&quot;authors_can_import_students&quot;:&quot;true&quot;,&quot;authors_can_publish_courses&quot;:&quot;true&quot;,&quot;internal_subscriptions_beta&quot;:&quot;true&quot;,&quot;recaptcha_enabled_on_signup&quot;:&quot;true&quot;,&quot;display_vat_inclusive_prices&quot;:&quot;true&quot;,&quot;single_page_checkout_enabled&quot;:&quot;true&quot;,&quot;authors_can_set_course_prices&quot;:&quot;true&quot;,&quot;send_lead_confirmation_emails&quot;:&quot;true&quot;,&quot;affiliate_cookie_duration_days&quot;:&quot;365&quot;,&quot;authors_can_issue_certificates&quot;:&quot;true&quot;,&quot;store_student_cards_separately&quot;:&quot;true&quot;,&quot;authors_can_manage_certificates&quot;:&quot;true&quot;,&quot;authors_can_manage_course_pages&quot;:&quot;true&quot;,&quot;disable_js_course_event_tracking&quot;:&quot;false&quot;,&quot;exclusive_vat_on_custom_gateways&quot;:&quot;true&quot;,&quot;is_edit_site_onboarding_complete&quot;:&quot;false&quot;,&quot;send_certificate_issuance_emails&quot;:&quot;true&quot;,&quot;owner_teachable_accounts_required&quot;:&quot;true&quot;,&quot;prevent_payment_plan_cancellation&quot;:&quot;true&quot;,&quot;send_subscription_reminder_emails&quot;:&quot;true&quot;,&quot;automatically_add_disqus_attachments&quot;:&quot;true&quot;,&quot;recalc_course_pct_on_lecture_publish&quot;:&quot;false&quot;,&quot;send_confirmation_instructions_emails&quot;:&quot;true&quot;,&quot;send_limited_time_unenrollment_emails&quot;:&quot;true&quot;,&quot;turn_off_myteachable_sign_up_branding&quot;:&quot;true&quot;}" data-accessible-features="[&quot;bulk_enroll_students&quot;,&quot;manually_importing_users&quot;,&quot;native_certificates&quot;,&quot;custom_roles&quot;,&quot;earnings_statements&quot;,&quot;teachable_payments&quot;,&quot;teachable_u&quot;,&quot;course_compliance&quot;,&quot;page_editor_v2&quot;,&quot;page_editor_v2_only&quot;,&quot;certificates_editor_v2&quot;,&quot;drip_content&quot;,&quot;custom_domain&quot;,&quot;coupons&quot;,&quot;graded_quizzes&quot;,&quot;power_editor&quot;,&quot;email&quot;,&quot;course_reports&quot;,&quot;webhooks&quot;,&quot;integrations&quot;,&quot;zapier_action_create_user&quot;,&quot;teachable_payments_payout_view&quot;,&quot;upsells&quot;,&quot;facebook_pixel&quot;,&quot;user_search_filters&quot;,&quot;user_tags&quot;,&quot;multiple_course_pages&quot;,&quot;proration_upgrade_flow&quot;,&quot;cross_border_payments&quot;,&quot;limited_time_enrollments&quot;,&quot;sales_tax_on_student_checkout&quot;,&quot;warroom_jan_22_blocks&quot;,&quot;new_device_confirmation&quot;,&quot;elasticsearch_users&quot;,&quot;elasticsearch_transactions&quot;,&quot;reset_progress&quot;,&quot;fraud_warnings&quot;,&quot;paypal_through_tp&quot;,&quot;new_creator_checkout&quot;,&quot;circle_oauth&quot;]" data-course-data="{&quot;is_lecture_order_enforced&quot;:true,&quot;is_minimum_quiz_score_enforced&quot;:true,&quot;is_video_completion_enforced&quot;:false,&quot;minimum_quiz_score&quot;:80.0,&quot;maximum_quiz_retakes&quot;:5}" data-course-url="https://courses.miuul.com/courses/1452426" data-course-id="1452426" data-lecture-id="33312816" data-lecture-url="https://courses.miuul.com/courses/1452426/lectures/33312816" data-quiz-strings="{&quot;check&quot;:&quot;Kontrol Et&quot;,&quot;error&quot;:&quot;Bir cevap seç&quot;,&quot;label&quot;:&quot;Quiz&quot;,&quot;next&quot;:&quot;Devam Et&quot;,&quot;previous&quot;:&quot;Geri&quot;,&quot;scored&quot;:&quot;Puanınız&quot;,&quot;retake&quot;:&quot;Tekrar dene&quot;,&quot;retry&quot;:&quot;Devam edebilmek için sorulara doğru cevap vermeniz gereken yüzde:   %{minimumQuizScore}% - bu quiz&#39;i %{retakes} kere daha çözme hakkınız var.&quot;,&quot;request&quot;:&quot;Devam edebilmek için sorulara doğru cevap vermeniz gereken yüzde: %{minimumQuizScore}% - puanınızı sıfırlamak için Miuul&#39;a bir talep gönderildi. Miuul ekibi bu sınava tekrar girmenizi onaylarsa size bildirimde bulunacağız.&quot;}" /><meta id="analytics-keys" name="analytics" data-analytics="{&quot;Google Analytics&quot;:{&quot;trackingId&quot;:&quot;UA-215888432-3&quot;,&quot;enhancedEcommerce&quot;:true,&quot;sendUserId&quot;:true,&quot;schoolDomain&quot;:&quot;courses.miuul.com&quot;,&quot;anonymizeIp&quot;:true}}" />
+    
+    <!-- Lecture Header -->
+<header class='full-width half-height is-signed-in'>
+  <div class='lecture-left'>
+    <a class='nav-icon-back' aria-label='Back to course curriculum' data-no-turbolink="true" role='button' href='/courses/1452426'>
+      <svg width="24" height="24" title="Back to course curriculum">
+        <use xlink:href="#icon__Home"></use>
+      </svg>
+    </a>
+    <div class="dropdown settings-dropdown" role='menubar'>
+      <a href='#' class='nav-icon-settings dropdown-toggle nav-focus' aria-label='Settings Menu' aria-haspopup='true' role='menuitem' id='settings_menu' data-toggle='dropdown'>
+        <svg width="24" height="24" title="Settings Menu">
+          <use xlink:href="#icon__Settings"></use>
+        </svg>
+      </a>
+      <ul class="dropdown-menu left-caret" role="menu" aria-labelledby="settings_menu">
+  <!-- AUTOPLAY -->
+  <li class="nav-focus" aria-label="menuitem">
+    <div class="switch" id="switch-autoplay-lectures">
+      <input id="custom-toggle-autoplay" class="custom-toggle custom-toggle-round" name="toggle-autoplay" type="checkbox" aria-label="Otomatik Oynatma">
+      <label for="custom-toggle-autoplay"></label>
+    </div>
+    <span aria-labelledby="switch-autoplay-lectures">Otomatik Oynatma</span>
+  </li>
+  <!-- AUTOCOMPLETE -->
+  <li class="nav-focus" aria-label="menuitem">
+    <div class="switch" id="switch-autocomplete-lectures">
+      <input id="custom-toggle-autocomplete" class="custom-toggle custom-toggle-round" name="toggle-autocomplete" type="checkbox" aria-label="Otomatik Tamamlama">
+      <label for="custom-toggle-autocomplete"></label>
+    </div>
+    <span aria-labelledby="switch-autocomplete-lectures">Otomatik Tamamlama</span>
+  </li>
+  <!-- PLAYBACK SPEED -->
+  <li class="nav-focus" aria-label="menuitem">
+    <div class="pull-right">
+      <button class="playback-speed" role="button">
+      </button>
+    </div>
+    Hız
+  </li>
+  <!-- QUALITY: not working yet -->
+  <!--  <li>
+    <div class="pull-right">
+      <div class="switch-toggle switch-3 well">
+        <input id="auto" name="quality" type="radio" checked>
+        <label for="auto" onclick="">Auto</label>
+        <input id="hd" name="quality" type="radio">
+        <label for="hd" onclick="">HD</label>
+        <input id="sd" name="quality" type="radio">
+        <label for="sd" onclick="">SD</label>
+        <a class="btn btn-primary"></a>
+      </div>
+    </div>
+    Quality
+  </li> -->
+</ul>
+
+    </div>
+    <a class="nav-icon-list show-xs hidden-sm hidden-md hidden-lg collapsed" aria-label='Course Sidebar' role="button" data-toggle="collapse" href="#courseSidebar" aria-expanded="false" aria-controls="courseSidebar">
+        <svg width="24" height="24" title="Course Sidebar">
+          <use xlink:href="#icon__FormatListBulleted"></use>
+        </svg>
+      </a>
+  </div>
+  
+  <div class='lecture-nav'>
+    <a class='nav-btn' href='' role='button' id='lecture_previous_button'>
+        <svg width="24" height="24" aria-hidden='true'>
+          <use xlink:href="#icon__ArrowBack"></use>
+         </svg>
+      &nbsp;
+      <span class='nav-text'>Önceki Ders</span>
+    </a>
+    <a
+      class='nav-btn complete'
+      data-cpl-tooltip='İlerleyebilmek için ders özelindeki tüm süreçleri tamamlamanız gerekiyor.'
+      data-vpl-tooltip='Ders videolarının en az 90% 'ını izlediğiniz takdirde dersi tamamlamış sayılıyorsunuz. Şu an ilgili dersin %{progress_completed} 'ini tamamladınız.'
+      href=''
+      id='lecture_complete_button'
+      role='button'
+    >
+      <span class='nav-text'>İlerle</span>
+      &nbsp;
+      <svg width="24" height="24" aria-hidden='true'>
+          <use xlink:href="#icon__ArrowForward"></use>
+        </svg>
+    </a>
+  </div>
+  
+</header>
+
+    <section class="lecture-page-layout">
+      <div role="navigation" class='course-sidebar lecture-page navbar-collapse navbar-sidebar-collapse' id='courseSidebar'>
+  <div class='course-sidebar-head'>
+    <h2>Machine Learning (Makine Öğrenmesi)</h2>
+    <!-- Course Progress -->
+    
+    <div class='course-progress lecture-page is-at-top'>
+      <div class='progressbar'>
+        <div class='progressbar-fill' style='min-width: 24%;'></div>
+      </div>
+      <div class='small course-progress-percentage'>
+        <span class='percentage'>
+          24%
+        </span>
+        Tamamlandı
+      </div>
+    </div>
+    
+  </div>
+  <!-- Lecture list on courses page (enrolled user) -->
+
+  <div class='row lecture-sidebar'>
+    
+    <div class='col-sm-12 course-section'>
+      <div role="heading" aria-level="3" class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date="" data-course-id="1452426">
+        <span class="section-lock v-middle">
+          <svg width="24" height="24">
+            <use xlink:href="#icon__LockClock"></use>
+          </svg>&nbsp;
+        </span>
+        Makine Öğrenmesi
+      </div>
+      <ul class='section-list'>
+        
+        <li data-lecture-id="33386836" data-lecture-url='/courses/makine-ogrenmesi/lectures/33386836' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33386836'
+            data-ss-event-type='link' data-ss-lecture-id='33386836'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33386836' id='sidebar_link_33386836'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Subject"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Genel Bilgilendirme
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33459858" data-lecture-url='/courses/makine-ogrenmesi/lectures/33459858' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33459858'
+            data-ss-event-type='link' data-ss-lecture-id='33459858'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33459858' id='sidebar_link_33459858'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Subject"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Kurs Materyalleri
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312678" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312678' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312678'
+            data-ss-event-type='link' data-ss-lecture-id='33312678'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312678' id='sidebar_link_33312678'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesine Giriş ( Introduction to Machine Learning )
+                
+                (1:24)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312682" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312682' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312682'
+            data-ss-event-type='link' data-ss-lecture-id='33312682'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312682' id='sidebar_link_33312682'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesi Nedir ?
+                
+                (8:48)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312685" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312685' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312685'
+            data-ss-event-type='link' data-ss-lecture-id='33312685'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312685' id='sidebar_link_33312685'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesi Nedir? Fonksiyonel Örnek
+                
+                (10:27)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312683" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312683' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312683'
+            data-ss-event-type='link' data-ss-lecture-id='33312683'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312683' id='sidebar_link_33312683'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gerçek Hayat Örnekleri
+                
+                (13:15)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312686" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312686' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312686'
+            data-ss-event-type='link' data-ss-lecture-id='33312686'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312686' id='sidebar_link_33312686'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesi Temel Kavramlar
+                
+                (10:17)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312687" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312687' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312687'
+            data-ss-event-type='link' data-ss-lecture-id='33312687'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312687' id='sidebar_link_33312687'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesi Temel Kavramlar 2
+                
+                (4:23)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312679" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312679' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312679'
+            data-ss-event-type='link' data-ss-lecture-id='33312679'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312679' id='sidebar_link_33312679'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Model Doğrulama Yöntemleri
+                
+                (8:51)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312680" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312680' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312680'
+            data-ss-event-type='link' data-ss-lecture-id='33312680'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312680' id='sidebar_link_33312680'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Model Başarı Değerlendirme Yöntemleri
+                
+                (12:01)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312684" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312684' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312684'
+            data-ss-event-type='link' data-ss-lecture-id='33312684'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312684' id='sidebar_link_33312684'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yanlılık-Varyans Değiş Tokuşu ( Bias-Variance Tradeoff )
+                
+                (12:59)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312681" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312681' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312681'
+            data-ss-event-type='link' data-ss-lecture-id='33312681'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312681' id='sidebar_link_33312681'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Model Tuning
+                
+                (4:21)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312821" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312821' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312821'
+            data-ss-event-type='link' data-ss-lecture-id='33312821'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312821' id='sidebar_link_33312821'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Regresyon Modellerine Giriş
+                
+                (1:30)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312823" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312823' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312823'
+            data-ss-event-type='link' data-ss-lecture-id='33312823'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312823' id='sidebar_link_33312823'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Basit Doğrusal Regresyon ( Simple Linear Regression )
+                
+                (15:21)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312807" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312807' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312807'
+            data-ss-event-type='link' data-ss-lecture-id='33312807'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312807' id='sidebar_link_33312807'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Basit Doğrusal Regresyon: Model
+                
+                (10:47)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312819" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312819' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312819'
+            data-ss-event-type='link' data-ss-lecture-id='33312819'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312819' id='sidebar_link_33312819'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Basit Doğrusal Regresyon: Tahmin
+                
+                (12:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312806" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312806' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312806'
+            data-ss-event-type='link' data-ss-lecture-id='33312806'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312806' id='sidebar_link_33312806'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Artıklar ( Hatalar )
+                
+                (8:08)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312808" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312808' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312808'
+            data-ss-event-type='link' data-ss-lecture-id='33312808'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312808' id='sidebar_link_33312808'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Çoklu Doğrusal Regresyon ( Multiple Linear Regression )
+                
+                (8:15)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312820" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312820' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312820'
+            data-ss-event-type='link' data-ss-lecture-id='33312820'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312820' id='sidebar_link_33312820'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Çoklu Doğrusal Regresyon: Model
+                
+                (10:55)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312811" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312811' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312811'
+            data-ss-event-type='link' data-ss-lecture-id='33312811'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312811' id='sidebar_link_33312811'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Çoklu Doğrusal Regresyon: Tahmin
+                
+                (8:12)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312809" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312809' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312809'
+            data-ss-event-type='link' data-ss-lecture-id='33312809'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312809' id='sidebar_link_33312809'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Çoklu Doğrusal Regresyon: Model Tuning
+                
+                (12:42)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312810" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312810' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312810'
+            data-ss-event-type='link' data-ss-lecture-id='33312810'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312810' id='sidebar_link_33312810'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Ridge Regresyon ( Ridge Regression )
+                
+                (7:12)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312816" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312816' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312816'
+            data-ss-event-type='link' data-ss-lecture-id='33312816'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312816' id='sidebar_link_33312816'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Ridge Regresyon: Model
+                
+                (14:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312817" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312817' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312817'
+            data-ss-event-type='link' data-ss-lecture-id='33312817'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312817' id='sidebar_link_33312817'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Ridge Regresyon: Tahmin
+                
+                (9:45)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312825" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312825' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312825'
+            data-ss-event-type='link' data-ss-lecture-id='33312825'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312825' id='sidebar_link_33312825'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Ridge Regresyon: Model Tuning
+                
+                (9:33)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312818" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312818' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312818'
+            data-ss-event-type='link' data-ss-lecture-id='33312818'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312818' id='sidebar_link_33312818'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lasso Regresyon
+                
+                (4:13)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312824" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312824' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312824'
+            data-ss-event-type='link' data-ss-lecture-id='33312824'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312824' id='sidebar_link_33312824'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lasso Regresyon: Model
+                
+                (9:36)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312822" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312822' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312822'
+            data-ss-event-type='link' data-ss-lecture-id='33312822'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312822' id='sidebar_link_33312822'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lasso Regresyon: Tahmin
+                
+                (5:30)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312812" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312812' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312812'
+            data-ss-event-type='link' data-ss-lecture-id='33312812'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312812' id='sidebar_link_33312812'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lasso Regresyon: Model Tuning
+                
+                (7:08)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312815" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312815' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312815'
+            data-ss-event-type='link' data-ss-lecture-id='33312815'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312815' id='sidebar_link_33312815'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                ElasticNet Regresyon
+                
+                (1:55)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312814" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312814' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312814'
+            data-ss-event-type='link' data-ss-lecture-id='33312814'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312814' id='sidebar_link_33312814'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                ElasticNet Regresyon: Model & Tahmin
+                
+                (2:57)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33312813" data-lecture-url='/courses/makine-ogrenmesi/lectures/33312813' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33312813'
+            data-ss-event-type='link' data-ss-lecture-id='33312813'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33312813' id='sidebar_link_33312813'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                ElasticNet Regresyon: Model Tuning
+                
+                (9:17)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313119" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313119' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313119'
+            data-ss-event-type='link' data-ss-lecture-id='33313119'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313119' id='sidebar_link_33313119'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Doğrusal Olmayan Regresyon Modellerine Giriş
+                
+                (2:22)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313118" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313118' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313118'
+            data-ss-event-type='link' data-ss-lecture-id='33313118'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313118' id='sidebar_link_33313118'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu ( K-Nearest Neighbors )
+                
+                (6:02)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313109" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313109' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313109'
+            data-ss-event-type='link' data-ss-lecture-id='33313109'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313109' id='sidebar_link_33313109'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu: Model & Tahmin
+                
+                (6:48)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313093" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313093' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313093'
+            data-ss-event-type='link' data-ss-lecture-id='33313093'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313093' id='sidebar_link_33313093'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu: Model Tuning
+                
+                (10:20)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313107" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313107' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313107'
+            data-ss-event-type='link' data-ss-lecture-id='33313107'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313107' id='sidebar_link_33313107'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Regresyonu ( Support Vector Regression )
+                
+                (7:32)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313123" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313123' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313123'
+            data-ss-event-type='link' data-ss-lecture-id='33313123'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313123' id='sidebar_link_33313123'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Regresyonu: Model & Tahmin
+                
+                (4:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313099" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313099' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313099'
+            data-ss-event-type='link' data-ss-lecture-id='33313099'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313099' id='sidebar_link_33313099'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Regresyonu: Model Tuning
+                
+                (7:14)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313102" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313102' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313102'
+            data-ss-event-type='link' data-ss-lecture-id='33313102'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313102' id='sidebar_link_33313102'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları ( Artificial Neural Network )
+                
+                (13:28)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313101" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313101' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313101'
+            data-ss-event-type='link' data-ss-lecture-id='33313101'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313101' id='sidebar_link_33313101'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları: Model & Tahmin
+                
+                (4:54)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313115" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313115' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313115'
+            data-ss-event-type='link' data-ss-lecture-id='33313115'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313115' id='sidebar_link_33313115'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları: Model Tuning
+                
+                (10:06)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313103" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313103' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313103'
+            data-ss-event-type='link' data-ss-lecture-id='33313103'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313103' id='sidebar_link_33313103'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART ( Classification and Regression Tree )
+                
+                (13:07)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313106" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313106' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313106'
+            data-ss-event-type='link' data-ss-lecture-id='33313106'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313106' id='sidebar_link_33313106'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART: Model & Tahmin
+                
+                (7:49)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313104" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313104' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313104'
+            data-ss-event-type='link' data-ss-lecture-id='33313104'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313104' id='sidebar_link_33313104'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART: Model Tuning
+                
+                (13:40)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313108" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313108' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313108'
+            data-ss-event-type='link' data-ss-lecture-id='33313108'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313108' id='sidebar_link_33313108'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Rastgele Ormanlar ( Random Forests )
+                
+                (11:23)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313105" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313105' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313105'
+            data-ss-event-type='link' data-ss-lecture-id='33313105'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313105' id='sidebar_link_33313105'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Random Forests: Model & Tahmin
+                
+                (3:37)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313117" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313117' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313117'
+            data-ss-event-type='link' data-ss-lecture-id='33313117'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313117' id='sidebar_link_33313117'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Random Forests: Model Tuning
+                
+                (11:26)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313094" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313094' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313094'
+            data-ss-event-type='link' data-ss-lecture-id='33313094'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313094' id='sidebar_link_33313094'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines
+                
+                (9:09)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313095" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313095' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313095'
+            data-ss-event-type='link' data-ss-lecture-id='33313095'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313095' id='sidebar_link_33313095'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines: Model & Tahmin
+                
+                (2:14)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313097" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313097' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313097'
+            data-ss-event-type='link' data-ss-lecture-id='33313097'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313097' id='sidebar_link_33313097'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines: Model Tuning
+                
+                (11:15)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313096" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313096' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313096'
+            data-ss-event-type='link' data-ss-lecture-id='33313096'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313096' id='sidebar_link_33313096'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost
+                
+                (1:58)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313100" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313100' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313100'
+            data-ss-event-type='link' data-ss-lecture-id='33313100'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313100' id='sidebar_link_33313100'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost: Model & Tahmin
+                
+                (2:59)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313098" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313098' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313098'
+            data-ss-event-type='link' data-ss-lecture-id='33313098'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313098' id='sidebar_link_33313098'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost: Model Tuning
+                
+                (5:43)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313111" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313111' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313111'
+            data-ss-event-type='link' data-ss-lecture-id='33313111'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313111' id='sidebar_link_33313111'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM
+                
+                (2:39)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313110" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313110' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313110'
+            data-ss-event-type='link' data-ss-lecture-id='33313110'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313110' id='sidebar_link_33313110'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM: Model & Tahmin
+                
+                (4:48)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313112" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313112' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313112'
+            data-ss-event-type='link' data-ss-lecture-id='33313112'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313112' id='sidebar_link_33313112'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM: Model Tuning
+                
+                (6:05)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313116" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313116' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313116'
+            data-ss-event-type='link' data-ss-lecture-id='33313116'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313116' id='sidebar_link_33313116'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost ( Category Boosting )
+                
+                (2:13)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313114" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313114' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313114'
+            data-ss-event-type='link' data-ss-lecture-id='33313114'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313114' id='sidebar_link_33313114'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost: Model & Tahmin
+                
+                (1:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313113" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313113' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313113'
+            data-ss-event-type='link' data-ss-lecture-id='33313113'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313113' id='sidebar_link_33313113'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost: Model Tuning
+                
+                (6:19)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313120" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313120' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313120'
+            data-ss-event-type='link' data-ss-lecture-id='33313120'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313120' id='sidebar_link_33313120'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Makine Öğrenmesi Görevlerinin Otomatikleştirilmesi
+                
+                (21:25)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313512" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313512' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313512'
+            data-ss-event-type='link' data-ss-lecture-id='33313512'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313512' id='sidebar_link_33313512'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Sınıflandırma Modellerine Giriş
+                
+                (1:36)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313515" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313515' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313515'
+            data-ss-event-type='link' data-ss-lecture-id='33313515'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313515' id='sidebar_link_33313515'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lojistik Regresyon ( Logistic Regression )
+                
+                (5:52)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313510" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313510' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313510'
+            data-ss-event-type='link' data-ss-lecture-id='33313510'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313510' id='sidebar_link_33313510'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lojistik Regresyon: Model & Tahmin
+                
+                (17:09)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313484" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313484' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313484'
+            data-ss-event-type='link' data-ss-lecture-id='33313484'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313484' id='sidebar_link_33313484'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Lojistik Regresyon: Model Tuning
+                
+                (4:59)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313485" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313485' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313485'
+            data-ss-event-type='link' data-ss-lecture-id='33313485'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313485' id='sidebar_link_33313485'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu ( K-Nearest Neighbors )
+                
+                (2:29)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313488" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313488' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313488'
+            data-ss-event-type='link' data-ss-lecture-id='33313488'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313488' id='sidebar_link_33313488'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu: Model & Tahmin
+                
+                (4:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313513" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313513' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313513'
+            data-ss-event-type='link' data-ss-lecture-id='33313513'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313513' id='sidebar_link_33313513'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-En Yakın Komşu: Model Tuning
+                
+                (4:57)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313511" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313511' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313511'
+            data-ss-event-type='link' data-ss-lecture-id='33313511'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313511' id='sidebar_link_33313511'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Makineleri ( Support Vector Machines)
+                
+                (5:38)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313505" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313505' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313505'
+            data-ss-event-type='link' data-ss-lecture-id='33313505'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313505' id='sidebar_link_33313505'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Makineleri: Model & Tahmin
+                
+                (2:32)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313514" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313514' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313514'
+            data-ss-event-type='link' data-ss-lecture-id='33313514'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313514' id='sidebar_link_33313514'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Destek Vektör Makineleri: Model Tuning
+                
+                (6:21)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313506" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313506' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313506'
+            data-ss-event-type='link' data-ss-lecture-id='33313506'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313506' id='sidebar_link_33313506'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları ( Artificial Neural Network )
+                
+                (7:03)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313503" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313503' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313503'
+            data-ss-event-type='link' data-ss-lecture-id='33313503'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313503' id='sidebar_link_33313503'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları: Model & Tahmin
+                
+                (6:32)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313501" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313501' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313501'
+            data-ss-event-type='link' data-ss-lecture-id='33313501'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313501' id='sidebar_link_33313501'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Yapay Sinir Ağları: Model Tuning
+                
+                (11:54)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313507" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313507' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313507'
+            data-ss-event-type='link' data-ss-lecture-id='33313507'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313507' id='sidebar_link_33313507'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART ( Classification and Regression Tree )
+                
+                (3:00)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313508" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313508' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313508'
+            data-ss-event-type='link' data-ss-lecture-id='33313508'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313508' id='sidebar_link_33313508'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART: Model & Tahmin
+                
+                (1:58)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313509" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313509' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313509'
+            data-ss-event-type='link' data-ss-lecture-id='33313509'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313509' id='sidebar_link_33313509'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CART: Model Tuning
+                
+                (4:14)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313494" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313494' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313494'
+            data-ss-event-type='link' data-ss-lecture-id='33313494'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313494' id='sidebar_link_33313494'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Rastgele Ormanlar ( Random Forests )
+                
+                (8:44)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313498" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313498' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313498'
+            data-ss-event-type='link' data-ss-lecture-id='33313498'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313498' id='sidebar_link_33313498'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Random Forests: Model & Tahmin
+                
+                (2:02)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313495" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313495' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313495'
+            data-ss-event-type='link' data-ss-lecture-id='33313495'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313495' id='sidebar_link_33313495'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Random Forests: Model Tuning
+                
+                (10:27)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313496" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313496' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313496'
+            data-ss-event-type='link' data-ss-lecture-id='33313496'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313496' id='sidebar_link_33313496'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines ( GBM )
+                
+                (2:35)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313497" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313497' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313497'
+            data-ss-event-type='link' data-ss-lecture-id='33313497'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313497' id='sidebar_link_33313497'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines: Model & Tahmin
+                
+                (3:15)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313499" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313499' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313499'
+            data-ss-event-type='link' data-ss-lecture-id='33313499'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313499' id='sidebar_link_33313499'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Gradient Boosting Machines: Model Tuning
+                
+                (5:31)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313486" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313486' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313486'
+            data-ss-event-type='link' data-ss-lecture-id='33313486'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313486' id='sidebar_link_33313486'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost
+                
+                (1:27)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313502" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313502' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313502'
+            data-ss-event-type='link' data-ss-lecture-id='33313502'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313502' id='sidebar_link_33313502'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost: Model & Tahmin
+                
+                (3:51)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313500" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313500' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313500'
+            data-ss-event-type='link' data-ss-lecture-id='33313500'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313500' id='sidebar_link_33313500'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                XGBoost: Model Tuning
+                
+                (4:54)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313487" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313487' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313487'
+            data-ss-event-type='link' data-ss-lecture-id='33313487'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313487' id='sidebar_link_33313487'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM
+                
+                (2:06)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313491" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313491' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313491'
+            data-ss-event-type='link' data-ss-lecture-id='33313491'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313491' id='sidebar_link_33313491'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM: Model & Tahmin
+                
+                (3:45)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313489" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313489' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313489'
+            data-ss-event-type='link' data-ss-lecture-id='33313489'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313489' id='sidebar_link_33313489'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Light GBM: Model Tuning
+                
+                (4:18)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313490" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313490' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313490'
+            data-ss-event-type='link' data-ss-lecture-id='33313490'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313490' id='sidebar_link_33313490'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost ( Category Boosting )
+                
+                (1:42)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313492" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313492' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313492'
+            data-ss-event-type='link' data-ss-lecture-id='33313492'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313492' id='sidebar_link_33313492'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost: Model & Tahmin
+                
+                (2:26)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313504" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313504' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313504'
+            data-ss-event-type='link' data-ss-lecture-id='33313504'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313504' id='sidebar_link_33313504'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                CatBoost: Model Tuning
+                
+                (5:26)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313493" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313493' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313493'
+            data-ss-event-type='link' data-ss-lecture-id='33313493'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313493' id='sidebar_link_33313493'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Tüm Modellerin Karşılaştırılması
+                
+                (16:30)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313563" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313563' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313563'
+            data-ss-event-type='link' data-ss-lecture-id='33313563'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313563' id='sidebar_link_33313563'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Denetimsiz Öğrenme ( Unsupervised Learning ) Giriş
+                
+                (1:24)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313568" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313568' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313568'
+            data-ss-event-type='link' data-ss-lecture-id='33313568'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313568' id='sidebar_link_33313568'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-Ortalamalar ( K-Means )
+                
+                (4:40)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313567" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313567' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313567'
+            data-ss-event-type='link' data-ss-lecture-id='33313567'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313567' id='sidebar_link_33313567'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                K-Means Uygulama
+                
+                (12:21)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313565" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313565' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313565'
+            data-ss-event-type='link' data-ss-lecture-id='33313565'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313565' id='sidebar_link_33313565'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Optimum Küme Sayısının Belirlenmesi
+                
+                (12:38)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313564" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313564' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313564'
+            data-ss-event-type='link' data-ss-lecture-id='33313564'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313564' id='sidebar_link_33313564'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Hiyerarşik Kümeleme Analizi ( Hierarchical Cluster Analysis )
+                
+                (6:09)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313566" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313566' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313566'
+            data-ss-event-type='link' data-ss-lecture-id='33313566'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313566' id='sidebar_link_33313566'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Hiyerarşik Kümeleme Uygulama
+                
+                (8:07)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313569" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313569' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313569'
+            data-ss-event-type='link' data-ss-lecture-id='33313569'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313569' id='sidebar_link_33313569'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Temel Bileşen Analizi ( Principal Component Analysis )
+                
+                (4:07)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33313570" data-lecture-url='/courses/makine-ogrenmesi/lectures/33313570' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33313570'
+            data-ss-event-type='link' data-ss-lecture-id='33313570'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33313570' id='sidebar_link_33313570'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Video"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Temel Bileşen Analizi Uygulama
+                
+                (10:51)
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+        <li data-lecture-id="33361496" data-lecture-url='/courses/makine-ogrenmesi/lectures/33361496' class='section-item incomplete'>
+          <a class='item' data-no-turbolink='true' data-ss-course-id='1452426'
+            data-ss-event-name='Lecture: Navigation Sidebar' data-ss-event-href='/courses/makine-ogrenmesi/lectures/33361496'
+            data-ss-event-type='link' data-ss-lecture-id='33361496'
+            data-ss-position='1' data-ss-school-id='835685'
+            data-ss-user-id='70394363' href='/courses/makine-ogrenmesi/lectures/33361496' id='sidebar_link_33361496'>
+            <span class='status-container'>
+              <span class='status-icon'>
+                &nbsp;
+              </span>
+            </span>
+            <div class='title-container'>
+              <span class='lecture-icon v-middle'>
+                  <svg width="24" height="24">
+                    <use xlink:href="#icon__Quiz"></use>
+                  </svg>
+              </span>
+              <span class='lecture-name'>
+                Bitirme Soruları
+                
+              </span>
+            </div>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+      <!-- Lecture Content -->
+<div role="main" class="course-mainbar lecture-content full-width-content">
+  <!-- Meta tag for tracking lecture progress -->
+  <meta id="lecture-completion-data" data-last-lecture-id="33312825" data-last-lecture-url="/courses/1452426/lectures/33312825" data-is-completed="true" data-can-access-lecture="true" data-compliance-enabled="false" data-valid-for-completion="true" />
+  <h2 id="lecture_heading" class="section-title dsp-flex-xs flex-align-items-center-xs" data-lecture-id="33312816" data-next-lecture-id="33312817" data-lecture-url="/courses/1452426/lectures/33312816" data-next-lecture-url="/courses/1452426/lectures/33312817", data-previous-lecture-url="/courses/1452426/lectures/33386836" data-previous-lecture-id="33386836" >
+    <svg width="24" height="24">
+        <use xlink:href="#icon__Video"></use>
+      </svg>
+    &nbsp;
+    Ridge Regresyon: Model
+</h2>
+
+  <!-- Attachment Blocks -->
+
+  <div
+    class='lecture-attachment lecture-attachment-type-video'
+    id="lecture-attachment-59625299"
+  >
+    <div class="attachment-data"></div>
+    
+      <!-- Attachment: Video -->
+
+  <div class="wistia_responsive_padding">
+      <div class="wistia_responsive_wrapper">
+        <div
+          class='attachment-wistia-player stillSnap=false wistia_embed videoFoam=true'
+          data-wistia-id='2rdmenmeqg'
+          data-still-url='https://embed-ssl.wistia.com/deliveries/003378239ea60b51199eb91f2cea29f8ad10d514.jpg?image_crop_resized=200x120'
+          id='wistia-2rdmenmeqg'
+          data-attachment-id='59625299'>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Video actions -->
+
+
+    
+  </div>
+
+  <div
+    class='lecture-attachment lecture-attachment-type-file'
+    id="lecture-attachment-59664348"
+  >
+    <div class="attachment-data"></div>
+    
+      
+        <!-- Attachment: File -->
+<div class='row attachment'>
+  İndir
+</div>
+<div class='row attachment'>
+  <a
+    class='download'
+    href='https://cdn.fs.teachablecdn.com/RpHcAaGRAmKnrjtE8xVA'
+    target='_blank'
+    rel='noopener'
+    download
+    data-x-origin-download
+    data-x-origin-download-name='Hitters.csv'
+  >
+  <svg width="24" height="24" class="icon-m v-middle" aria-label="Download">
+    <use xlink:href="#icon__Attachment"></use>
+  </svg>
+    Hitters.csv
+  </a>
+</div>
+
+      
+    
+  </div>
+
+  <div
+    class='lecture-attachment lecture-attachment-type-native_comments'
+    id="lecture-attachment-59674205"
+  >
+    <div class="attachment-data"></div>
+    
+  </div>
+
+
+<!-- Comments -->
+
+  <div class='lecture-attachment'>
+    <div class="comments attachment-block-wrapper">
+  <div role="heading" aria-level="3" class="attachment-block-label">
+    İletişim
+  </div>
+  <div id="comments_settings" class="comments-settings hidden" data-thread-endpoint="/api/v1/comments/?commentable_type=Attachment&amp;commentable_id=59674205&amp;threaded=true" data-i18n="{&quot;post_title&quot;:&quot;Yorum ekle / Soru sor&quot;,&quot;post_placeholder&quot;:&quot;Buraya yazın&quot;,&quot;post_success&quot;:&quot;Yorumunuz gönderildi&quot;,&quot;post_moderation&quot;:&quot;Yorumunuz gönderildi, yayınlanmadan önce mentor ekibimiz tarafından onaylanması gerekiyor.&quot;,&quot;post_fail&quot;:&quot;Üzgünüz, yorumunuz şu anda gönderilemedi :(&quot;,&quot;post_comment&quot;:&quot;Paylaş&quot;,&quot;save_comment&quot;:&quot;Yorumu Kaydet&quot;,&quot;view_comment&quot;:&quot;Yoruma bak&quot;,&quot;reply&quot;:&quot;Yanıtla&quot;,&quot;ago&quot;:&quot;önce&quot;,&quot;now&quot;:&quot;şimdi&quot;,&quot;instructor&quot;:&quot;Eğitmen&quot;,&quot;awaiting_review&quot;:&quot;İnceleme Bekleniyor&quot;,&quot;comments&quot;:&quot;yorum/soru&quot;,&quot;notifications_participating_thread&quot;:&quot;Birisi katıldığım bir tartışmaya bir yorum bıraktığında bana haber ver.&quot;,&quot;notifications_responses&quot;:&quot;Birisi yorumlarıma yanıt verdiğinde bana haber ver.&quot;,&quot;notifications_author&quot;:&quot;Biri kurslarımdan birine yorum yaptığında bana haber ver.&quot;,&quot;has_been_removed&quot;:&quot;Bu yorum kaldırıldı.&quot;,&quot;add_image&quot;:&quot;Görsel Ekle&quot;,&quot;view_thread&quot;:&quot;Bu konunun geri kalanını görüntüle&quot;,&quot;approve&quot;:&quot;Onayla&quot;,&quot;edit&quot;:&quot;Düzenle&quot;,&quot;delete&quot;:&quot;Sil&quot;,&quot;permalink&quot;:&quot;Link&quot;,&quot;load_more&quot;:&quot;Daha fazla yükle&quot;,&quot;add_text_error&quot;:&quot;Lütfen yoruma metin ekleyin&quot;,&quot;comment_responses_email&quot;:&quot;Bıraktığım yoruma bir cevap geldiğinde mail almak istiyorum.&quot;,&quot;comment_discussion_email&quot;:&quot;Yorum bıraktığım bir tartışmaya başka bir kişi yanıt verdiğinde mail almak istiyorum.&quot;}" data-attachments-enabled="true" data-filepicker-key="ADNupMnWyR7kCWRvm76Laz"></div>
+  
+    
+    <h4 class="comments__heading">Yorum ekle / Soru sor</h4>
+    <div class="comments__wrapper">
+      <div class="comments__block comments__block--indent-level-0 comments__block--student comments__block--new" id="new_comment_container">
+
+  <div class="commenter-profile">
+    <img class="gravatar" src="https://s.gravatar.com/avatar/3dc783c459f57ff61ba3faf656facbd2?d=mm" alt="Hakan Erdem">
+
+    <label class="comments__block-box__meta-tag comments__block-box__meta-tag-instructor label label-default">
+      Eğitmen
+    </label>
+  </div>
+
+  <div class="comments__block-box new-comment-form">
+    <div class="comment-arrow-border">
+      <div class="comment-arrow"></div>
+    </div>
+    <div class="comments__block-box__meta">
+      <div class="comments__block-box__meta-name">Hakan Erdem</div>
+      <div class="comments__block-box__meta-now">şimdi</div>
+    </div>
+    <form action="/api/v1/comments" class="new-comment-form" method="post" target="_blank" rel="noopener" data-type="json" data-remote="true" id="new_comment_form" data-comment-handler="create_comment">
+      <div class="alert alert-success comments__block-box__alert--posted" id="posted_msg">
+        Yorumunuz gönderildi
+      </div>
+      <div class="alert alert-warning comments__block-box__alert--review" id="review_msg">
+        <i class='fa fa-check'></i> Yorumunuz gönderildi, yayınlanmadan önce mentor ekibimiz tarafından onaylanması gerekiyor.
+      </div>
+      <div class="alert alert-danger comments__block-box__alert--failed" id="failed_msg">
+        Üzgünüz, yorumunuz şu anda gönderilemedi :(
+      </div>
+      <div class="alert alert-danger text-error" id="text_error_alert" id="text_error_msg">
+        Lütfen yoruma metin ekleyin
+      </div>
+      <input type="hidden" name="comments[commentable_type]" value="Attachment">
+      <input type="hidden" name="comments[commentable_id]" value="59674205">
+      
+
+      <div class="comment-editor">
+        <textarea aria-label="Comment box" placeholder="Buraya yazın" name="comments[body]" id="comment_body"></textarea>
+        <div class="new attachments-editor hidden" id="attachments_editor">
+          <a href="#" class='add-attachment' id="add_attachment" data-comment-handler="add_image">
+            <img src="https://fedora.teachablecdn.com/assets/icon-image-add-2bb59d5f21dbca28cca9cf9e6530fc84f468b86806ca92da9e2bdafa2aa398d0.svg" alt="Görsel Ekle">
+          </a>
+          <ul class="attachments" data-editable-attachments="true"></ul>
+        </div>
+      </div>
+      <input class='btn btn-primary pull-right btn-md' type="submit" value="Paylaş">
+    </form>
+  </div>
+</div>
+
+    </div>
+    
+  
+
+  <h4 class="comments__heading">
+    <span id="comments_total">4</span> yorum/soru
+  </h4>
+  <div class="comments__wrapper" id="comments_wrapper">
+    
+  </div>
+
+  <div class="comments__heading">
+    <a class="comments-pagination-link hidden" id="comments_pagination" data-comment-handler="load_more">
+      Daha fazla yükle
+    </a>
+  </div>
+
+</div>
+
+
+  </div>
+
+
+
+<div id='empty_box'></div>
+<!-- Scroll to current lecture link position in sidebar -->
+
+</div>
+
+    </section>
+    <!-- No lecture footer in the new redesign -->
+
+    
+  </body>
+</html>
